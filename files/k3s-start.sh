@@ -42,4 +42,4 @@ else
     systemctl start kube-dashboard &
 fi
 
-/usr/local/bin/k3s "$K3S_CMD" ${K3S_FLAGS}
+/usr/local/bin/k3s "$K3S_CMD" ${K3S_FLAGS} --disable traefik

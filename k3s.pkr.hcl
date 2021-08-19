@@ -3,14 +3,14 @@ variable "k3s_version" {
 }
 
 source "googlecompute" "k3s" {
-    project_id   = "instruqt"
+    project_id   = "training-and-enablement"
     region       = "europe-west1"
     zone         = "europe-west1-b"
 
     image_family = regex_replace("k3s-${regex_replace(var.k3s_version, "\\+.*$", "")}", "[^a-zA-Z0-9_-]", "-")
     image_name   = regex_replace("k3s-${var.k3s_version}-${ uuidv4() }", "[^a-zA-Z0-9_-]", "-")
 
-    source_image_family = "ubuntu-2010"
+    source_image_family = "ubuntu-minimal-2104"
     machine_type        = "n1-standard-4"
     disk_size           = 20
 
