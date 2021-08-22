@@ -31,7 +31,8 @@ apt-get -y install \
     unzip \
     bash-completion \
     dnsutils \
-    iputils-ping
+    iputils-ping \
+    netcat
 
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 
